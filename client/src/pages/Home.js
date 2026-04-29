@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Home.css";
 
 function Home() {
+  const [search, setSearch] = useState("");
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    if (search.trim() === "") {
+      navigate("/hostels");
+    } else {
+      navigate(`/hostels?search=${search}`);
+    }
+  };
+
   return (
     <div>
-
-      {/* HERO */}
       <section className="hero">
         <div className="hero-content">
           <h1>
@@ -14,9 +24,18 @@ function Home() {
 
           <p>Discover comfortable, safe and affordable PGs near you.</p>
 
-          <div className="search-box">
-            <input type="text" placeholder="Search by city, area or locality..." />
-            <button>Search</button>
+          <div className="search-panel">
+            <div className="search-input-wrapper">
+              <span className="search-icon">📍</span>
+              <input
+                type="text"
+                placeholder="Enter city, area or PG name"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              />
+            </div>
+
+            <button onClick={handleSearch}>Search</button>
           </div>
         </div>
       </section>
@@ -28,7 +47,6 @@ function Home() {
         </div>
 
         <div className="pg-cards">
-
           <div className="pg-card">
             <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2" />
             <div className="pg-info">
@@ -55,7 +73,6 @@ function Home() {
               <span>₹5,000 / month</span>
             </div>
           </div>
-
         </div>
       </section>
 
@@ -94,7 +111,6 @@ function Home() {
       <footer className="footer">
         <p>© 2026 PG Finder. All rights reserved.</p>
       </footer>
-
     </div>
   );
 }

@@ -138,6 +138,121 @@
   cursor: pointer;
 }
 
+.add-hostel-page {
+  min-height: 100vh;
+  background: #f8f7ff;
+  padding: 45px 20px;
+}
+
+.add-hostel-card {
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  border-radius: 22px;
+  padding: 35px;
+  box-shadow: 0 10px 30px rgba(80, 70, 150, 0.14);
+}
+
+.add-hostel-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.add-hostel-header h2 {
+  color: #111827;
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.add-hostel-header p {
+  color: #6b7280;
+}
+
+.add-hostel-form {
+  width: 100%;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 7px;
+}
+
+.form-group input {
+  padding: 13px 14px;
+  border: 1px solid #ddd6fe;
+  border-radius: 11px;
+  outline: none;
+  font-size: 15px;
+}
+
+.form-group input:focus {
+  border-color: #6c63ff;
+}
+
+.add-hostel-btn {
+  margin-top: 28px;
+  width: 100%;
+  padding: 14px;
+  background: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.add-hostel-btn:hover {
+  background: #574fd6;
+}
+
+.manage-rooms-page h1 {
+  text-align: center;
+  font-size: 52px;
+  margin-bottom: 28px;
+  color: #111827;
+}
+
+.add-room-top {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+.add-room-btn {
+  padding: 14px 30px;
+  background: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(108, 99, 255, 0.2);
+}
+
+.add-room-btn:hover {
+  background: #574fd6;
+}
+
 @media (max-width: 992px) {
   .owner-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -151,5 +266,18 @@
 
   .owner-grid {
     grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 700px) {
+  .add-hostel-card {
+    padding: 25px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .add-hostel-header h2 {
+    font-size: 26px;
   }
 }

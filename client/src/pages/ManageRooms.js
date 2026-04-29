@@ -36,9 +36,9 @@ function ManageRooms() {
     <div className="owner-page">
       <h1>Manage Rooms</h1>
 
-      <div className="owner-actions">
-        <Link to={`/owner/add-room/${hostelId}`} className="owner-main-btn">
-          + Add Room
+      <div className="add-room-top">
+        <Link to={`/owner/add-room/${hostelId}`} className="add-room-btn">
+          Add Room
         </Link>
       </div>
 
@@ -50,7 +50,9 @@ function ManageRooms() {
                 <h3>{room.type}</h3>
                 <p>Price: ₹{room.price}/month</p>
                 <p>Vacancy: {room.vacancy}</p>
-                <p>Status: {room.availability ? "Available" : "Not Available"}</p>
+                <p>
+                  Status: {room.availability ? "Available" : "Not Available"}
+                </p>
 
                 <div className="owner-card-buttons">
                   <Link
